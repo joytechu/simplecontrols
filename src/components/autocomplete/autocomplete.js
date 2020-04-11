@@ -1,34 +1,52 @@
 import React, { Component } from 'react';
-
+import PropTypes from 'prop-types';
 
 class  Autocomplete extends Component {
 
   state = {
     resultsExpanded: false,
     searching: false,
-    searchvaalue:''
+    searchvalue:'',
+    results: []
   }
 
   render() {
-
     const onChange = (e) => {
       if(e.target.value === '')
       {
         this.setState({
-          searchvaalue: e.target.value,
+          searchvalue: e.target.value,
           searching: false,
-          resultsExpanded:true
+          resultsExpanded:false,
+          results: []
         })
       }
       else
       {
         this.setState({
-          searchvaalue: e.target.value,
+          searchvalue: e.target.value,
           searching: true,
-          resultsExpanded:false
+          resultsExpanded:false,
+          results: []
         })
       }
 
+      this.props.onFetchData(e.target.value, (results) => {
+        this.setState({
+          searching: true,
+          resultsExpanded:true,
+          results : results
+        })
+      });
+    }
+
+    const onSelected =(item) => {
+      this.props.onSelectedResult(item);
+      this.setState({
+        searching: false,
+        resultsExpanded:false,
+        searchvalue: item.DisplayText
+      })
     }
 
     const results = () => {
@@ -37,33 +55,29 @@ class  Autocomplete extends Component {
         return (
         <div className="autocomplete__searchresults">
           <ul>
-              <li>
-                search result 1
-              </li>
-              <li>
-                search result 2
-              </li>
+            {
+              this.state.results.map(item => {
+                return <li key={item.DisplayText} onClick={(e) => onSelected(item)}>{item.DisplayText}</li>
+              })
+            }
           </ul>
         </div>)
       }
       else if(this.state.searching)
       {
         return (
-          <div className="autocomplete__searchresults">
+          <div className="autocomplete__searching">
             <ul>
-                <li className="autocomplete__searchresults--searching">
-                  <i className="fas fa-cog"/> 
-                  <span>Searching</span>
-                </li>
+              <li><i className="fas fa-cog"/>Searching...</li>
             </ul>
           </div>) 
       }
     }
 
     return (
-      <div className="autocomplete">
-        <div className="autocomplete__searchbox">
-          <input type="text" className="autocomplete__input" onChange={onChange} onBlur={() => this.setState({resultsExpanded: false,searching: false})} value={this.state.searchvalue} />
+      <div className="autocomplete" id="autocomplete">
+        <div className="autocomplete__searchbox" id="instance-id">
+          <input type="text" className="autocomplete__input" onChange={onChange} value={this.state.searchvalue} />
           { 
             results()
           }
@@ -72,5 +86,12 @@ class  Autocomplete extends Component {
       </div>
     )
   }
+}
+
+Autocomplete.propTypes = {
+  onInputChanged: PropTypes.func.isRequired,
+  onSelectedResult: PropTypes.func.isRequired,
+  onFetchData: PropTypes.func,
+  data: PropTypes.array
 }
 export default Autocomplete;
