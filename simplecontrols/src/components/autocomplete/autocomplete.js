@@ -2,10 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class  Autocomplete extends Component {
-
-
   constructor(props) {
-    // Required step: always call the parent class' constructor
     super(props);
 
     // Set the state directly. Use props if necessary.
@@ -97,11 +94,7 @@ class  Autocomplete extends Component {
 }
 
 Autocomplete.propTypes = {
-  onInputChanged: PropTypes.func.isRequired,
   onSelectedResult: PropTypes.func.isRequired,
-  onFetchData: PropTypes.func,
-  data: PropTypes.array,
-  placeholdertext: PropTypes.string
-  
+  onFetchData: PropTypes.func,  
 }
 export default Autocomplete;

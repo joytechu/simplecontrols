@@ -3,8 +3,8 @@ import Autocomplete from '../components/autocomplete'
 import React from 'react'
 import {render, fireEvent, screen} from '@testing-library/react'
 
-test('container only has one class', () => {
-    const { container  } =     render(<Autocomplete />);
+test('First test', () => {
+    const { container  } =     render(<Autocomplete onFetchData={() => console.log("do something")} />);
     var input = container.querySelector('input');
     fireEvent.change(input, { target: { value: '23' } })
     expect(input.value).toBe('23')
