@@ -9,9 +9,10 @@
   },
   "keywords": [
     "Controls",
-    "Auto complete"
+    "Auto complete",
+    "Checklist"
   ],
-  "license" : "MIT",
+  "license": "MIT",
   "peerDependencies": {
     "react": "16.13.1",
     "react-dom": ">=15.0.1"

@@ -11,7 +11,7 @@
         margin:0;
         border:1px solid $autocomplete_input_border_color;
         background-color:$autocomplete_input_background_color;
-        z-index: 5;
+        z-index: $autocomplete_search_results_z_index;
 
         li {
             padding:0;
@@ -29,7 +29,7 @@
     &__searchbox
     {
         flex-grow: 1;
-        position: relative;
+        position:relative;
 
         input{
             width:100%; 
@@ -39,17 +39,8 @@
     &__searching
     {
         transition: all 0.5s ease-in-out;
-        i {
-            padding:auto auto;
-            padding:5px;
-            font-family: 'Font Awesome 5 Free';
-            content: "\f101";
-            font-weight: 900;
-            -webkit-animation:spin 4s linear infinite;
-            -moz-animation:spin 4s linear infinite;
-            animation:spin 4s linear infinite;
-            transform-origin: 50% 50%;
-        }
+        position:absolute;
+        width:100%;
     }
 
     &__searchresults
