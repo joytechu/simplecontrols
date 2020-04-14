@@ -58,7 +58,7 @@ class Autocomplete extends Component {
               {this.state.results.map((item) => {
                 return (
                   <li key={item.DisplayText} onClick={() => onSelected(item)}>
-                    {item.DisplayText}
+                    {item.DisplayText || ""}
                   </li>
                 );
               })}
@@ -69,10 +69,7 @@ class Autocomplete extends Component {
         return (
           <div className="autocomplete__searching">
             <ul>
-              <li>
-                <i className="fas fa-cog" />
-                Searching...
-              </li>
+              <li>{this.props.searchText || "Searching..."}</li>
             </ul>
           </div>
         );
@@ -98,5 +95,6 @@ class Autocomplete extends Component {
 Autocomplete.propTypes = {
   onSelectedResult: PropTypes.func.isRequired,
   onFetchData: PropTypes.func,
+  searchText: PropTypes.string,
 };
 export default Autocomplete;

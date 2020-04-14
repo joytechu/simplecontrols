@@ -6,11 +6,14 @@ import {Autocomplete, CheckboxList} from "simplereactcontrols"
 function App() {
   return (
     <div className="App">
+      <h1>Autocomplete</h1>
       <Autocomplete 
         onFetchData={(val,cb) => setTimeout(() => cb( [{ DisplayText: "llo"}]), 1000)} 
         onSelectedResult={(item) => { console.log(item)}}
+        searchText="Searching for something"
       />
-      <CheckboxList data={[{DisplayText: "Label1", DefaultValue: false, Value: 2},
+      <h1>CheckboxList</h1>
+      <CheckboxList data={[{DisplayText: "This is a really long word", DefaultValue: false, Value: 2},
                            {DisplayText: "label2", DefaultValue: false, Value: 1}, 
                            {DisplayText: "Label2", DefaultValue: false, Value: 2},
                            {DisplayText: "Label4", DefaultValue: false, Value: 3},

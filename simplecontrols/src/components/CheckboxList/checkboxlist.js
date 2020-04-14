@@ -21,7 +21,7 @@ class CheckboxList extends Component {
         {this.state.data.map((item, idx) => {
           return (
             <div key={idx}>
-              <label>{item.DisplayText}</label>
+              <label className="checkboxlist__label">{item.DisplayText}</label>
               <input
                 type="checkbox"
                 className="checkboxlist__checkbox"
