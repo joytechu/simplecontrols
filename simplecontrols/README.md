@@ -30,7 +30,6 @@ import {Autocomplete, CheckboxList} from "simplereactcontrols"
 ```
 
 
-
 # Styling
 The current styling used follows a 7-1 sass design pattern. Controls come with a basic style - this can be extended by overriding the sass variables.
 

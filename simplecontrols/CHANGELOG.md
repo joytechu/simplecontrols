@@ -5,13 +5,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
-- Add unit tests for both Autocomplete & CheckboxLit
+- Add unit tests for both Autocomplete & CheckboxList
 
 ## [0.0.3] - 2020-04-13
 ### Added
 - Basic checkbox list control.
 ### Updated
 - Documentation to reflect new control.
+### Fixed
+- position of list item causing page to reflow on autocomplete.
 
 ## [0.0.2] - 2020-04-12
 ### Added
