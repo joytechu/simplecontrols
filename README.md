@@ -1,11 +1,16 @@
 # Description
-This project provides a re-usable components (Autocomplete,CheckboxList) for quickly prototyping react applications.
+This project provides a re-usable components (Autocomplete,CheckboxList) components for quickly prototyping react applications.
 
 # Controls
 - Autocomplete - Simple auto complete functionality for react applications.
-- CheckboxList - Simple checkbox list which fires selected and deselected events
+- CheckboxList - Simple checkbox list that fires selected and deselected events
 
 # Usage
+
+```jsx
+import {Autocomplete, CheckboxList} from "simplereactcontrols"
+```
+
 ```jsx
       <Autocomplete 
         onFetchData={(searchval,callback) =>  callback( [{ DisplayText: "Your AutoComplete Result", SomeProperty: "Random Prop" }])} 
@@ -25,7 +30,6 @@ This project provides a re-usable components (Autocomplete,CheckboxList) for qui
 ```
 
 
-
 # Styling
 The current styling used follows a 7-1 sass design pattern. Controls come with a basic style - this can be extended by overriding the sass variables.
 
@@ -37,7 +41,8 @@ Please feel free to fork or extend this project, PR'ing your changes (https://gi
 
 # Road Map
 The following functionality is currently being developed.
+- Checkbox List
 - Unit Tests
 
 # Last Updated
-14/04/2020 
+14/04/2020
