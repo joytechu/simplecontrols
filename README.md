@@ -1,5 +1,3 @@
-![Node.js CI](https://github.com/joytechu/simplecontrols/workflows/Node.js%20CI/badge.svg)
-
 # Description
 This project provides a re-usable components (Autocomplete,CheckboxList) components for quickly prototyping react applications.
 
@@ -36,10 +34,15 @@ import {Autocomplete, CheckboxList} from "simplereactcontrols"
 The current styling used follows a 7-1 sass design pattern. Controls come with a basic style - this can be extended by overriding the sass variables.
 
 # Tests
+![Node.js CI](https://github.com/joytechu/simplecontrols/workflows/Node.js%20CI/badge.svg)
+
 Tests are currently WIP. Tests Have been created under __tests__. The indended pattern is one control per file.
 
 # Contributing
 Please feel free to fork or extend this project, PR'ing your changes (https://github.com/joytechu/simplecontrols.git)
+
+# Changelog
+https://github.com/joytechu/simplecontrols/blob/master/CHANGELOG.md
 
 # Road Map
 The following functionality is currently being developed.
