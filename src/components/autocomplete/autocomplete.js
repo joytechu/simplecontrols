@@ -50,6 +50,14 @@ class Autocomplete extends Component {
       });
     };
 
+    const clear = () => {
+      this.setState({
+        searching: false,
+        resultsExpanded: false,
+        searchvalue: "",
+      });
+    };
+
     const results = () => {
       if (this.state.resultsExpanded) {
         return (
@@ -85,8 +93,11 @@ class Autocomplete extends Component {
             onChange={onChange}
             value={this.state.searchvalue}
           />
-          {results()}
+          <a onClick={clear}>
+            <span className="autocomplete__clearbutton" />
+          </a>
         </div>
+        {results()}
       </div>
     );
   }

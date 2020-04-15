@@ -1,14 +1,20 @@
 import React from 'react';
 import './App.css';
-import {Autocomplete, CheckboxList} from "simplereactcontrols"
+import {Autocomplete, CheckboxList, DropdownList} from "simplereactcontrols"
 
 
 function App() {
   return (
     <div className="App">
+
       <h1>Autocomplete</h1>
       <Autocomplete 
-        onFetchData={(val,cb) => setTimeout(() => cb( [{ DisplayText: "llo"}]), 1000)} 
+        onFetchData={(val,cb) => setTimeout(() => cb( [{ DisplayText: "Gameboy"},
+                                                       { DisplayText: "Playstation"},
+                                                       { DisplayText: "Xbox"},
+                                                       { DisplayText: "Gamecube"},
+                                                       { DisplayText: "PC"},
+                                                       { DisplayText: "Megadrive"}]), 1000)} 
         onSelectedResult={(item) => { console.log(item)}}
         searchText="Searching for something"
       />
@@ -21,6 +27,14 @@ function App() {
                            onSelect={(e,item) => console.log(item)} 
                            onDeselect={(e,item) => console.log(item)} 
       />
+      <h1>DropdownList</h1>
+      <DropdownList DefaultValue="Pink" data={[{DisplayText: "Red",  value: "Red"},
+                           {DisplayText: "Green",  value: "Green"}, 
+                           {DisplayText: "Blue",  value: "Blue"},
+                           {DisplayText: "Pink",  value: "Pink"},
+                           {DisplayText: "Purple" , value: "Purple"}]} 
+                           onSelect={(e,item) => console.log(item)} 
+                           />
     </div>
   );
 }

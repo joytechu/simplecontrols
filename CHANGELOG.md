@@ -7,7 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.5] - 2020-04-15
+
+### Added
+
+- Added dropdownlist control, which is unstyled.
+
+### Updated
+
+-- Autocomplete to have a clear button, and added some styling.
+-- Updated documentation.
+
 ## [0.0.4] - 2020-04-15
+
 ### Added
 
 - Added automated deployment to npmjs for master.
