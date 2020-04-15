@@ -5,4 +5,7 @@ demo
 .travis.yml
 .eslintrc.json
 .github
-node_module
+node_modules
+.github
+.vscode
+
