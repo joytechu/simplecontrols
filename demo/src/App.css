@@ -1,0 +1,6 @@
+.container::after {
+    content: "Read this -";
+    background-color: yellow;
+    color: red;
+    font-weight: bold;
+}

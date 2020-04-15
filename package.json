@@ -1,6 +1,6 @@
 {
   "name": "simplereactcontrols",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Simple react controls to make prototyping easy!",
   "main": "./dist/index.js",
   "repository": {

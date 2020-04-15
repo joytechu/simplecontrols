@@ -17,7 +17,8 @@
 @import "layout/header", "layout/footer";
 
 // 5. Components
-@import "components/autocomplete", "components/checkboxlist";
+@import "components/autocomplete", "components/checkboxlist",
+  "components/dropdownlist";
 
 // 6. Page-specific styles
 @import "pages/home";
