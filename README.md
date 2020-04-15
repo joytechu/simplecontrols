@@ -1,3 +1,5 @@
+![Node.js CI](https://github.com/joytechu/simplecontrols/workflows/Node.js%20CI/badge.svg)
+
 # Description
 This project provides a re-usable components (Autocomplete,CheckboxList) components for quickly prototyping react applications.
 
