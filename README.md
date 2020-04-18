@@ -24,7 +24,7 @@ import { Autocomplete, CheckboxList } from "simplereactcontrols";
   onSelectedResult={(item) => {
     console.log(item);
   }}
-  search
+  searchText="This is searchtext"
 />
 ```
 
