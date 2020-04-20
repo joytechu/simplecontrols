@@ -1,12 +1,13 @@
 # Description
 
-This project provides re-usable components (Autocomplete,CheckboxList, DropdownList) components for quickly prototyping react applications.
+This project provides re-usable components (Autocomplete, CheckboxList, DropdownList, Drawboard) components for quickly prototyping react applications.
 
 # Controls
 
 - Autocomplete - Simple auto complete functionality for react applications.
 - CheckboxList - Simple checkbox list that fires selected and deselected events (currently unstyled)
 - DropdownList - Simple dropdownlist that fires events on change (Currently unstyled)
+- Drawboard - Simple canas that emits events that can be forwarded onto realtime endpoints such as signalR (WIP)
 
 # Usage
 
@@ -53,6 +54,11 @@ import { Autocomplete, CheckboxList } from "simplereactcontrols";
 />
 ```
 
+```jsx
+<Drawboard />
+/>
+```
+
 # Styling
 
 The current styling used follows a 7-1 sass design pattern. Controls come with a basic style - this can be extended by overriding the sass variables.
@@ -78,7 +84,8 @@ The following functionality is currently being developed.
 - Dropdown List Styling
 - Checkbox list styling, and media query to handle display flex/block for different screen sizes.
 - Unit tests.
+- Drawboard - WIP
 
 # Last Updated
 
-15/04/2020
+20/04/2020

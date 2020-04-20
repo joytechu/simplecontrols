@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import {Autocomplete, CheckboxList, DropdownList} from "simplereactcontrols"
+import {Autocomplete, CheckboxList, DropdownList, Drawboard} from "simplereactcontrols"
 
 
 function App() {
@@ -35,6 +35,7 @@ function App() {
                            {DisplayText: "Purple" , value: "Purple"}]} 
                            onSelect={(e,item) => console.log(item)} 
                            />
+                           <div><Drawboard /></div>
     </div>
   );
 }

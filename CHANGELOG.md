@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+Simple canvas area for drawing images, that emits events that is idea for sending to a realtime api (e.g. signalR)
+
 ## [0.0.6] - 2020-04-15
 
 ### Added

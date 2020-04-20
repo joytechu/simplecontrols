@@ -1,6 +1,6 @@
 {
   "name": "simplereactcontrols",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Simple react controls to make prototyping easy!",
   "main": "./dist/index.js",
   "repository": {
@@ -10,7 +10,10 @@
   "keywords": [
     "Controls",
     "Auto complete",
-    "Checklist"
+    "Checklist",
+    "Simple dropdown list",
+    "Simple canvas",
+    "drawing area"
   ],
   "license": "MIT",
   "peerDependencies": {
