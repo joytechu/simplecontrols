@@ -10,9 +10,10 @@ class Drawboard extends Component {
       linecCap: "round",
       strokeStyle: "#c0392b",
       pos: {
-        x: 0,
-        y: 0,
+        x: 200,
+        y: 200,
       },
+      palette: ["#c0392b","#47F95B", "#F9E147", "#47D6F9","#C047F9","#F947EC", "#F9475F"]
     };
     this.draw = this.draw.bind(this);
     this.resize = this.resize.bind(this);
@@ -56,9 +57,9 @@ class Drawboard extends Component {
 
     ctx.beginPath(); // begin
 
-    ctx.lineWidth = 5;
+    ctx.lineWidth = this.state.strokeWidth;
     ctx.lineCap = "round";
-    ctx.strokeStyle = "#c0392b";
+    ctx.strokeStyle = this.state.strokeStyle;
 
     ctx.moveTo(this.state.pos.x, this.state.pos.y); // from
     this.setPosition(e);
@@ -68,13 +69,32 @@ class Drawboard extends Component {
   }
 
   render() {
+
+    const changeStroke =(color) => {
+      this.setState({
+        strokeStyle:color
+      }, () => {
+        if(this.props.onChangeStroke)
+          this.props.onChangeStroke(color);
+      });
+    }
+
     return (
-      <div className="canvas">
-        <canvas ref={this.canvas} width="100vw" height="100vh"></canvas>
+      <div className="drawboard">
+        <canvas className="canvas" ref={this.canvas} width="600px" height="600px"></canvas>
+        <div className="palette">
+          {
+            this.state.palette.map((item,idx) => {
+              return <span className="palette__color" onClick={() => changeStroke(item)} style={{backgroundColor:item}}></span>
+            })
+          }
+        </div>
       </div>
     );
   }
 }
 
-Drawboard.propTypes = {};
+Drawboard.propTypes = {
+  onChangeStroke: PropTypes.func,
+};
 export default Drawboard;

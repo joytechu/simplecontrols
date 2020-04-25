@@ -55,7 +55,7 @@ import { Autocomplete, CheckboxList } from "simplereactcontrols";
 ```
 
 ```jsx
-<Drawboard />
+<Drawboard  />
 />
 ```
 

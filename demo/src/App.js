@@ -35,7 +35,9 @@ function App() {
                            {DisplayText: "Purple" , value: "Purple"}]} 
                            onSelect={(e,item) => console.log(item)} 
                            />
-                           <div><Drawboard /></div>
+
+      <h1>Drawboard</h1>
+      <div><Drawboard /></div>
     </div>
   );
 }
