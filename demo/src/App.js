@@ -8,6 +8,7 @@ function App() {
     <div className="App">
 
       <h1>Autocomplete</h1>
+      <div style={{width:"200px", paddingLeft:"20px"}}>
       <Autocomplete 
         onFetchData={(val,cb) => setTimeout(() => cb( [{ DisplayText: "Gameboy"},
                                                        { DisplayText: "Playstation"},
@@ -18,6 +19,7 @@ function App() {
         onSelectedResult={(item) => { console.log(item)}}
         searchText="Searching for something"
       />
+      </div>
       <h1>CheckboxList</h1>
       <CheckboxList data={[{DisplayText: "This is a really long word", DefaultValue: false, Value: 2},
                            {DisplayText: "label2", DefaultValue: false, Value: 1}, 

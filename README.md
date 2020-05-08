@@ -12,8 +12,10 @@ This project provides re-usable components (Autocomplete, CheckboxList, Dropdown
 # Usage
 
 ```jsx
-import { Autocomplete, CheckboxList } from "simplereactcontrols";
+import { Autocomplete, CheckboxList, DropdownList, Drawboard  } from "simplereactcontrols";
 ```
+
+![alt text](https://github.com/joytechu/simplecontrols/blob/autocomplete_animation?raw=true)
 
 ```jsx
 <Autocomplete
