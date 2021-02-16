@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import ReactDOM from "react-dom";
 
 class Drawboard extends Component {
   constructor(props) {
@@ -10,10 +11,18 @@ class Drawboard extends Component {
       linecCap: "round",
       strokeStyle: "#c0392b",
       pos: {
-        x: 200,
-        y: 200,
+        x: 0,
+        y: 0,
       },
-      palette: ["#c0392b","#47F95B", "#F9E147", "#47D6F9","#C047F9","#F947EC", "#F9475F"]
+      palette: [
+        "#c0392b",
+        "#47F95B",
+        "#F9E147",
+        "#47D6F9",
+        "#C047F9",
+        "#F947EC",
+        "#F9475F",
+      ],
     };
     this.draw = this.draw.bind(this);
     this.resize = this.resize.bind(this);
@@ -37,16 +46,18 @@ class Drawboard extends Component {
 
   // new position from mouse event
   setPosition(e) {
+    var element = this.canvas.current.getBoundingClientRect();
     this.setState({
       pos: {
         x: e.clientX,
-        y: e.clientY,
+        y: e.clientY - element.top,
       },
     });
   }
 
   // resize canvas
   resize() {
+    console.log(this.canvas.width);
     this.canvas.width = window.innerWidth;
     this.canvas.height = window.innerHeight;
   }
@@ -69,25 +80,36 @@ class Drawboard extends Component {
   }
 
   render() {
-
-    const changeStroke =(color) => {
-      this.setState({
-        strokeStyle:color
-      }, () => {
-        if(this.props.onChangeStroke)
-          this.props.onChangeStroke(color);
-      });
-    }
+    const changeStroke = (color) => {
+      this.setState(
+        {
+          strokeStyle: color,
+        },
+        () => {
+          if (this.props.onChangeStroke) this.props.onChangeStroke(color);
+        }
+      );
+    };
 
     return (
       <div className="drawboard">
-        <canvas className="canvas" ref={this.canvas} width="600px" height="600px"></canvas>
+        <canvas
+          className="canvas"
+          width="100%"
+          height="100%"
+          ref={this.canvas}
+        ></canvas>
         <div className="palette">
-          {
-            this.state.palette.map((item,idx) => {
-              return <span className="palette__color" onClick={() => changeStroke(item)} style={{backgroundColor:item}}></span>
-            })
-          }
+          {this.state.palette.map((item, idx) => {
+            return (
+              <span
+                key={idx}
+                className="palette__color"
+                onClick={() => changeStroke(item)}
+                style={{ backgroundColor: item }}
+              ></span>
+            );
+          })}
         </div>
       </div>
     );
